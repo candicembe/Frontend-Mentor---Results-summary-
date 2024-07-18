@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    @media screen and  (max-width:375px) {
+      
+      .all {
+        height:700px;
+        
+      
+      }
+        
+        
+      
+      .gauche {
+        display: grid;
+        padding-top:10%;
+        margin-top:-8%;
+        padding-left:4%;
+        padding-right:4%;
+        margin-left:-2%;
+        
+        width:100%;
+        height:360px;
+        padding-top:20px;
+        z-index:2;
+        position: relative;
+        }
+        .titre {
+        flex-direction:column;
+        text-align:center;
+        padding-top:20px;
+        margin-bottom:25px;
+        margin-top:20px;
+        font-size:19px;
+        font-weight:500;
+        }
+        .result {
+        height :130px;
+        width:130px;
+        border-radius:65px;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+        display:flex;
+        flex-direction:column;
+        margin-bottom:15px;
+        
+        }
+        .great {
+          font-weight:500;
+          font-size:23px;
+
+        }
+        .texte {
+          width:300px;
+        }
+        .droite {
+        display: grid;
+        padding-top:10%;
+        height:400px;;
+        width:100%;
+        padding-top:20px;
+        z-index:1;
+      }
+      .summary {
+        margin-left:25px;
+        padding-top:4px;
+        margin-bottom:-28px;
+      
+        font-weight:700;
+        font-size:18px;
+      }
+      .reaction {
+        margin-left:25px;
+        width:250px;
+        height:55px;
+
+      }
+      .memory {
+        width:250px;
+        margin-left:25px;
+        height:55px;
+
+      }
+      .verbal {
+        width:250px;
+        margin-left:25px;
+        height:55px;
+
+      }
+      .visual {
+        width:250px;
+        margin-left:25px;
+        height:55px;
+
+      } 
+      .bouton {
+        width:289px;
+        height:55px;
+        cursor: pointer;
+        margin-left:26px;
+      }
+    }
+   
+
+    @media screen and (min-width:375px) {
+      .all {
+        display:flex;
+        margin-left:320px;
+        margin-right:320px;
+        margin-bottom:320px;
+      }
+      .gauche {
+        display: grid;
+        margin-top:200px;
+        height:400px;
+        width:320px;
+        padding-top:20px;
+        z-index:2;
+      }
+      .result {
+        height :166px;
+        width:166px;
+        border-radius:83px;
+      }
+      .great {
+        font-weight:500;
+        font-size:26px;
+
+      }
+      .texte {
+        width:230px;
+      }
+      .droite {
+        display:grid; 
+        margin-top:200px;
+        height:400px;
+        width:300px;
+        padding-left: 25px;
+        padding-right:15px;
+        padding-top: 19px;
+        margin-left:-41px;
+        z-index:1
+      }
+      .summary {
+        margin-left:45px;
+        padding-top:12px;
+        margin-bottom:-28px;
+        font-weight:700;
+        font-size:18px;
+      }
+      .reaction {
+        width:200px;
+        margin-left:45px;
+        height:46px;
+
+      }
+      .memory {
+        width:200px;
+        margin-left:45px;
+        height:46px;
+
+      }
+      .verbal {
+        width:200px;
+        margin-left:45px;
+        height:46px;
+
+      }
+      .visual {
+        width:200px;
+        margin-left:45px;
+        height:46px;
+
+      }
+      .bouton{
+        width:240px;
+        height:55px;
+        margin-left:45px;
+      }
+    }
+    .all {
+      font-family:Hanken Grotesk;
+     
+    }
+    .gauche {
+      
+      border-radius:25px;
+      background-image: linear-gradient(to bottom, hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+      z-index: 2;
+    
+    }
+    .titre {
+      flex-direction:column;
+      text-align:center;
+      color:hsl(241, 100%, 89%);
+      padding-top:13px;
+      font-size:19px;
+      font-weight:500;
+    }
+    .result {
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+      display:flex;
+      flex-direction:column;
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:-5px; 
+    }
+    .seventysix {
+     font-family: Hanken Grostesk;
+     font-size:40px;
+     color:white; 
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     font-weight: 800;
+     font-size:63px;
+    }
+    .ofcent {
+      font-size:18px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color:hsl(241, 100%, 89%);
+      text-align: center;
+      font-size:15px;
+
+    }
+    .great {
+      flex-direction:column;
+      text-align:center;
+      color:white;
+      
+    }
+    .texte {
+      flex-direction:column;
+      text-align: center;
+      color:hsl(241, 100%, 89%);
+      margin-left:auto;
+      margin-right:auto;
+      margin-bottom:24px;
+      
+    }
+    .droite {
+      background-color:white;
+      border-radius:25px;
+      box-shadow: 15px 15px 15px  8px  hsla(241, 81%, 54%, 0.064);
+      justify-items: start;
+      z-index:1;
+      
+     
+      font-size:15px;
+      
+      
+    }
+    .summary {
+      text-align: center;
+      margin-bottom:-11px;
+      color:hsl(224, 30%, 27%);
+
+    }
+    .reaction {
+      border:none;
+      display:flex;
+      
+      margin-top:9px;
+      
+      padding-left: 20px;
+      padding-right:20px;
+      border-radius:10px;
+      justify-content: space-between;
+      align-items: center;
+      color: hsl(0, 100%, 67%);
+      background-color: rgba(255, 87, 87, 0.046);
+      margin-bottom:-9px;
+      
+      font-weight: 500;
+      
+    }
+    .memory {
+      border:none;
+      
+      
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      padding-right:20px;
+      border-radius:10px;
+      background-color: rgba(255, 177, 31, 0.074);
+      color: hsl(39, 100%, 56%);
+      display:flex;
+      margin-bottom:-9px;
+      
+      font-weight: 500;
+    }
+    .verbal {
+      border:none;
+      display:flex;
+      
+      
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      padding-right:20px;
+      border-radius:10px;
+      background-color: hsla(166, 100%, 37%, 0.052);
+      color: hsl(166, 100%, 37%);
+      margin-bottom:-9px;
+      
+      font-weight: 500;
+
+    }
+    .visual {
+      border:none;
+      display:flex;
+      
+      
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 20px;
+      padding-right:20px;
+      border-radius:10px;
+      background-color:hsla(234, 85%, 45%, 0.059);
+      color:hsl(234, 85%, 45%);
+      
+      font-weight: 500;
+    }
+    .icon {
+      margin-right:-56px;
+    }
+    .note {
+      color:hsl(224, 30%, 27%);
+      display: inline-block;
+      font-weight:700;
+    }
+    .sur {
+      color:grey;
+      display: inline-block;
+      font-weight: 600;
+      
+    }
+    .bouton {
+      
+      
+      margin-bottom:-13px;
+      
+      border-radius:26px;
+      border:none;
+      background-color:hsl(224, 30%, 27%);
+      color:hsl(221, 100%, 96%); 
+      cursor:pointer;
+    }
+    
+    
+
+
+    .attribution { font-size: 11px; text-align: center; margin-top:200px;}
+    .attribution a { color: hsl(228, 45%, 44%);}
+
+  </style>
+</head>
+<body>
+
+  <div class="all">
+    <section class="gauche">
+    
+      <div class="titre">
+        Your Result
+      </div>
+      
+      <div class="result">
+        <div class="seventysix">
+          76  
+        </div>
+        <div class="ofcent">
+          of 100
+        </div>
+      </div>
+      
+      <div class="great">
+        Great
+      </div>
+      
+      <div class="texte">
+        You scored highter then 65% of the people who have taken these tests.
+      </div>
+    
+    </section>
+  
+    <section class="droite">
+      <div class="summary">
+        Summary
+      </div>
+
+      <div class="reaction">
+        <img class="icon" src="assets/images/icon-reaction.svg">
+        <div>
+          Reaction
+        </div>
+        <div><div class="note">80</div><div class="sur">/100</div></div>
+      </div>
+  
+      <div class="memory">
+      
+        <img class="icon" src="assets/images/icon-memory.svg">
+        <div>
+          Memory
+        </div>
+        <div><div class="note">92</div><div class="sur">/100</div></div>
+      </div>
+  
+      <div class="verbal">
+        <img class="icon" src="assets/images/icon-verbal.svg">
+        <div>
+          Verbal
+        </div>
+        <div><div class="note">61</div><div class="sur">/100</div></div>
+      </div>
+  
+      <div class="visual">
+        <img class="icon" src="assets/images/icon-visual.svg">
+        <div>
+          Visual
+        </div>
+        <div><div class="note">72</div><div class="sur">/100</div></div>
+      </div>
+  
+      <button class="bouton">
+        Continue
+      </button>
+  
+    </section>
+  </div>
+
+  
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
